@@ -4,45 +4,82 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Corinthians - Paixão Sem Limites</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
   <link rel="stylesheet" href="landing.css" />
+  <style>
+    .carousel {
+      position: relative;
+      overflow: hidden;
+    }
+    .carousel-inner {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+    .carousel-item {
+      min-width: 100%;
+      flex-shrink: 0;
+    }
+    .carousel-controls {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+    }
+    .carousel-controls button {
+      background: rgba(0,0,0,0.5);
+      border: none;
+      color: white;
+      font-size: 2rem;
+      padding: 0 1rem;
+    }
+  </style>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container">
-    <a class="navbar-brand d-flex align-items-center" href="#">
-      <img src="escudo.png" alt="Corinthians" height="40" class="me-2" />
-      <span>Corinthians</span>
+<!-- Navbar -->
+<nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="#">
+      <img src="escudo.png" alt="Corinthians" height="40" />
+      <span class="has-text-weight-bold ml-2">Corinthians</span>
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
-        <li class="nav-item"><a class="nav-link" href="#historia">História</a></li>
-        <li class="nav-item"><a class="nav-link" href="#titulos">Títulos</a></li>
-        <li class="nav-item"><a class="nav-link" href="#idolos">Ídolos</a></li>
-      </ul>
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarNav">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarNav" class="navbar-menu">
+    <div class="navbar-end">
+      <a class="navbar-item" href="#inicio">Início</a>
+      <a class="navbar-item" href="#historia">História</a>
+      <a class="navbar-item" href="#titulos">Títulos</a>
+      <a class="navbar-item" href="#idolos">Ídolos</a>
     </div>
   </div>
 </nav>
 
-<section id="inicio" class="text-white text-center d-flex align-items-center justify-content-center" style="background: url('torcida.jpeg') center/cover no-repeat; height: 80vh;">
+<!-- Banner -->
+<section id="inicio" class="has-text-white has-text-centered is-flex is-align-items-center is-justify-content-center" style="background: url('torcida.jpeg') center/cover no-repeat; height: 80vh;">
   <div class="container">
-    <h1 class="display-4 fw-bold">CORINTHIANS</h1>
-    <p class="lead">"Meu amor, meu eterno amor, Corinthians, eu só vivo por você"</p>
-    <a href="#historia" class="btn btn-light btn-lg mt-3">Conheça nossa história</a>
+    <h1 class="title is-1 has-text-weight-bold">CORINTHIANS</h1>
+    <p class="subtitle is-4">"Meu amor, meu eterno amor, Corinthians, eu só vivo por você"</p>
+    <a href="#historia" class="button is-light is-large mt-3">Conheça nossa história</a>
   </div>
 </section>
 
-<section id="historia" class="py-5">
+<!-- História -->
+<section id="historia" class="section">
   <div class="container">
-    <h2 class="mb-4">Nossa <span class="text-primary">História</span></h2>
-    <div class="row align-items-center">
-      <div class="col-md-6"><img src="torcida.jpeg" class="img-fluid rounded" alt="Torcida" /></div>
-      <div class="col-md-6">
+    <h2 class="title mb-5">Nossa <span class="has-text-primary">História</span></h2>
+    <div class="columns is-vcentered">
+      <div class="column is-6">
+        <img src="torcida.jpeg" class="image is-rounded" alt="Torcida" />
+      </div>
+      <div class="column is-6">
         <p>Fundado em 1º de setembro de 1910 no bairro do Bom Retiro, o Corinthians tornou-se o clube do povo brasileiro.</p>
         <p>Com milhões de torcedores, conquistas como o Mundial da FIFA (2000, 2012) e a Libertadores (2012) marcaram a história do clube.</p>
       </div>
@@ -50,31 +87,44 @@
   </div>
 </section>
 
-<section id="titulos" class="py-5 bg-light">
+<!-- Títulos -->
+<section id="titulos" class="section has-background-light">
   <div class="container">
-    <h2 class="mb-4 text-center">Títulos</h2>
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="card h-100">
-          <img src="mundial2000.jpeg" class="card-img-top" alt="Mundial 2000" />
-          <div class="card-body text-center">
-            <h5 class="card-title">Mundial 2000</h5>
+    <h2 class="title has-text-centered mb-5">Títulos</h2>
+    <div class="columns is-multiline">
+      <div class="column is-4">
+        <div class="card">
+          <div class="card-image">
+            <figure class="image">
+              <img src="mundial2000.jpeg" alt="Mundial 2000">
+            </figure>
+          </div>
+          <div class="card-content has-text-centered">
+            <h5 class="title is-5">Mundial 2000</h5>
           </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card h-100">
-          <img src="libertadores2012.jpeg" class="card-img-top" alt="Libertadores 2012" />
-          <div class="card-body text-center">
-            <h5 class="card-title">Libertadores 2012</h5>
+      <div class="column is-4">
+        <div class="card">
+          <div class="card-image">
+            <figure class="image">
+              <img src="libertadores2012.jpeg" alt="Libertadores 2012">
+            </figure>
+          </div>
+          <div class="card-content has-text-centered">
+            <h5 class="title is-5">Libertadores 2012</h5>
           </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card h-100">
-          <img src="copadobrasil2009.webp" class="card-img-top" alt="Copa do Brasil 2009" />
-          <div class="card-body text-center">
-            <h5 class="card-title">Copa do Brasil 2009</h5>
+      <div class="column is-4">
+        <div class="card">
+          <div class="card-image">
+            <figure class="image">
+              <img src="copadobrasil2009.webp" alt="Copa do Brasil 2009">
+            </figure>
+          </div>
+          <div class="card-content has-text-centered">
+            <h5 class="title is-5">Copa do Brasil 2009</h5>
           </div>
         </div>
       </div>
@@ -82,41 +132,64 @@
   </div>
 </section>
 
-<section id="idolos" class="py-5">
+<!-- Ídolos -->
+<section id="idolos" class="section">
   <div class="container">
-    <h2 class="mb-4 text-center">Ídolos</h2>
-    <div id="carouselIdolos" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="SOCRATES.jpg" class="d-block w-100" alt="Sócrates" />
+    <h2 class="title has-text-centered mb-5">Ídolos</h2>
+    <div class="carousel" id="carouselIdolos">
+      <div class="carousel-inner" id="carouselItems">
+        <div class="carousel-item">
+          <img src="SOCRATES.jpg" class="image" alt="Sócrates" />
         </div>
         <div class="carousel-item">
-          <img src="marcelinho.jpeg" class="d-block w-100" alt="Marcelinho Carioca" />
+          <img src="marcelinho.jpeg" class="image" alt="Marcelinho Carioca" />
         </div>
         <div class="carousel-item">
-          <img src="cassio.jpeg" class="d-block w-100" alt="Cássio" />
+          <img src="cassio.jpeg" class="image" alt="Cássio" />
         </div>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselIdolos" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselIdolos" data-bs-slide="next">
-        <span class="carousel-control-next-icon"></span>
-      </button>
+      <div class="carousel-controls">
+        <button id="prev">&#10094;</button>
+        <button id="next">&#10095;</button>
+      </div>
     </div>
   </div>
 </section>
 
-<div class="text-center py-5">
-  <button type="button" class="btn btn-warning" data-bs-toggle="popover" title="Curiosidade" data-bs-content="O Corinthians foi o primeiro campeão OFICIAL do mundial da FIFA!">
+<!-- Botão de Curiosidade -->
+<div class="has-text-centered section">
+  <button class="button is-warning" onclick="alert('O Corinthians foi o primeiro campeão OFICIAL do mundial da FIFA!')">
     Clique para saber uma curiosidade
   </button>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Script de navegação e carrossel -->
 <script>
-  const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
-  popoverTriggerList.forEach(el => new bootstrap.Popover(el));
+  // Navbar burger
+  document.addEventListener('DOMContentLoaded', () => {
+    const burger = document.querySelector('.navbar-burger');
+    const menu = document.getElementById(burger.dataset.target);
+    burger.addEventListener('click', () => {
+      burger.classList.toggle('is-active');
+      menu.classList.toggle('is-active');
+    });
+  });
+
+  // Carousel
+  const carousel = document.getElementById("carouselItems");
+  let index = 0;
+  const totalItems = carousel.children.length;
+
+  document.getElementById("next").onclick = () => {
+    index = (index + 1) % totalItems;
+    carousel.style.transform = `translateX(-${index * 100}%)`;
+  };
+
+  document.getElementById("prev").onclick = () => {
+    index = (index - 1 + totalItems) % totalItems;
+    carousel.style.transform = `translateX(-${index * 100}%)`;
+  };
 </script>
+
 </body>
 </html>
